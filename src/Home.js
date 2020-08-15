@@ -1,9 +1,10 @@
 import React from "react";
 
-const Ordering = () => {
+const Home = () => {
+
     return (
         <div></div>
     )
-};
+}
 
-export default Ordering;
+export default Home;
