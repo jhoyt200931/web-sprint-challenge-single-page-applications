@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import axios from "axios";
+import styled from "styled-components";
 
 const Ordering = () => {
     const [orderForm, setOrderForm] = useState({
@@ -61,9 +62,9 @@ const Ordering = () => {
         console.log(order);
 
     }, [order]);
-    
+
     const orderSchema = yup.object().shape({
-        name: yup.string().required("Please Enter your name"),
+        name: yup.string().min(2, "Name must be longer and 2 characters").required("Please Enter your name"),
         instructions: yup.string(),
         size: yup.string().oneOf(["Small", "Medium", "Large"]),
         pepperoni: yup.boolean().oneOf([true, false]),
