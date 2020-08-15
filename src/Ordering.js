@@ -3,6 +3,14 @@ import * as yup from "yup";
 import axios from "axios";
 import styled from "styled-components";
 
+
+const Form = styled.form` 
+display: flex;
+flex-direction: column;
+
+
+`;
+
 const Ordering = () => {
     const [orderForm, setOrderForm] = useState({
         name: "",
@@ -94,7 +102,7 @@ const Ordering = () => {
     }
     return (
         <div>
-            <form onSubmit={submit}>
+            <Form onSubmit={submit}>
                 <label htmlFor="name">
                     Name: 
                 <input type="text" id="name" name="name" data-cy="name" value={orderForm.name} onChange={handleChange}/>
@@ -105,7 +113,7 @@ const Ordering = () => {
                 <input type="textarea" id="instructions" name="instructions" data-cy="instructions" value={orderForm.instructions} onChange={handleChange}/>
                 </label>
                 <label htmlFor="size">
-                <select id="size" name="size" value={orderForm.size} onChange={handleChange}>
+                <select data-cy="size" id="size" name="size" value={orderForm.size} onChange={handleChange}>
                     <option>--Please Select A Size--</option>
                     <option name="small">Small</option>
                     <option name="medium">Medium</option>
@@ -114,26 +122,26 @@ const Ordering = () => {
                 </label>
                 <label htmlFor="pepperoni">
                     Pepperoni
-                <input type="checkbox" id="pepperoni" name="pepperoni" checked={orderForm.pepperoni} onChange={handleChange}/>
+                <input data-cy="pepperoni" type="checkbox" id="pepperoni" name="pepperoni" checked={orderForm.pepperoni} onChange={handleChange}/>
                 </label>
                 <label htmlFor="sausage">
                     Sausage
-                <input type="checkbox" id="sausage" name="sausage" checked={orderForm.sausage} onChange={handleChange}/>
+                <input data-cy="sausage" type="checkbox" id="sausage" name="sausage" checked={orderForm.sausage} onChange={handleChange}/>
                 </label>
                 <label htmlFor="mushroom">
                     Mushroom
-                <input type="checkbox" id="mushroom" name="mushroom" checked={orderForm.mushroom} onChange={handleChange}/>
+                <input data-cy="mushroom" type="checkbox" id="mushroom" name="mushroom" checked={orderForm.mushroom} onChange={handleChange}/>
                 </label>
                 <label htmlFor="olives">
                     Olives
-                <input type="checkbox" id="olives" name="olives" checked={orderForm.olives} onChange={handleChange}/>
+                <input data-cy="olives" type="checkbox" id="olives" name="olives" checked={orderForm.olives} onChange={handleChange}/>
                 </label>
                 <label htmlFor="peppers">
                     Peppers
-                <input type="checkbox" id="peppers" name="peppers" checked={orderForm.peppers} onChange={handleChange}/>
+                <input data-cy="peppers" type="checkbox" id="peppers" name="peppers" checked={orderForm.peppers} onChange={handleChange}/>
                 </label>
-                <button type="submit">Add to Order</button>
-            </form>
+                <button data-cy="submit" type="submit">Add to Order</button>
+            </Form>
         </div>
     )
 };

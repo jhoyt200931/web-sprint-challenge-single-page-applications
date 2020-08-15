@@ -15,24 +15,25 @@ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ
 background-repeat: no-repeat;
 background-size: cover;
 
+
 `;
 
 const App = () => {
   return (
-    <div>
+    <Body>
       <Head>
         <h1>John's Pizza</h1>
         <p>The Best NY Style Slice Around!!!</p>
         <Link to="/">Home</Link>
-        <Link to="/pizza">Place order</Link>
+        <Link data-cy="order" to="/pizza">Place order</Link>
       </Head>
-      <Body>
+      <div>
       <Switch>
         <Route path="/pizza" component={Ordering}/>
         <Route path="/" component={Home}/>
       </Switch>
-      </Body>
-    </div>
+      </div>
+    </Body>
 
   );
 };
