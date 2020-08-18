@@ -7,25 +7,35 @@ import styled from "styled-components";
 
 const Head = styled.div`
 background-color: yellow;
-
+height: 175px;
+`;
+const Title = styled.h1`
+margin-left: 40%;
+`;
+const SubTitle = styled.p`
+margin-left: 40%;
+`;
+const Links = styled.div`
+margin-left: 40%;
+margin-bottom: 15px;
 `;
 
 const Body = styled.div`
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjjwoiXS7Mbd6gCU8O8eN4a7r3qL7iMl7Vyg&usqp=CAU);
+background-image: url("https://images.squarespace-cdn.com/content/v1/5c48aadd506fbeeb5cde5933/1587492133403-G94LDZUTG6SIHJIUI2G9/ke17ZwdGBToddI8pDm48kP-KnnJMxcDblfBnkOICOuJ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mj0jfzTJBct9Y8e08WUVX3RJqdAm5hhGKFzHxD4xok-bsGASW1wu7YQtS8U_RRgCQ/Carryout-delivery.png?format=2500w");
 background-repeat: no-repeat;
-background-size: cover;
-
-
+background-size: contain;
 `;
 
 const App = () => {
   return (
     <Body>
       <Head>
-        <h1>John's Pizza</h1>
-        <p>The Best NY Style Slice Around!!!</p>
-        <Link to="/">Home</Link>
-        <Link data-cy="order" to="/pizza">Place order</Link>
+        <Title>John's Pizza</Title>
+        <SubTitle>The Best NY Style Slice Around!!!</SubTitle>
+        <Links>
+          <Link to="/">Home</Link>
+          <Link data-cy="order" to="/pizza">Place order</Link>
+        </Links>
       </Head>
       <div>
       <Switch>
